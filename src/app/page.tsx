@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState } from "react";
-import Link from "next/link";
 
 export default function Home() {
   const [vulnerabilities, setVulnerabilities] = useState([]);
@@ -45,9 +44,10 @@ export default function Home() {
             <td className="px-5 py-2">{cvedata.cve.published}</td>
             <td className="px-5 py-2">{cvedata.cve.lastModified}</td>
             <td className="px-5 py-2">
-              <Link href="/vulnerability/[id]" as={`/vulnerability/${cvedata.cve.id}`}>
-                <button className="text-blue-500 underline">Click here</button>
-              </Link>
+              <button className="text-sky-600 underline" onClick={
+                () => window.open(`/vulnerability/${cvedata.cve.id}`, '_blank')}>
+                Click here
+              </button>
             </td>
           </tr>
         ))}
