@@ -29,23 +29,23 @@ export default function Home() {
       <table className="w-full text-sm text-left rtl:text-right text-gray-600">
         <thead className="text-base text-white  bg-gray-50 dark:bg-gray-700">
           <tr>
-            <td className="px-5 py-3">CVE_ID</td>
-            <td className="px-5 py-3">Description</td>
-            <td className="px-5 py-3">Published</td>
-            <td className="px-5 py-3">LastModified</td>
-            <td className="px-5 py-3">More Detail</td>
+            <td className="px-5 py-4">CVE_ID</td>
+            <td className="px-5 py-4">Description</td>
+            <td className="px-5 py-4">Published</td>
+            <td className="px-5 py-4">LastModified</td>
+            <td className="px-5 py-4">More Detail</td>
           </tr>
         </thead>
 
         {vulnerabilities.map((cvedata: any) => (
           <tr key={cvedata.cve.id}>
-            <td className="px-5 py-2">{cvedata.cve.id}</td>
-            <td className="px-5 py-2">{cvedata.cve.descriptions[0].lang}</td>
-            <td className="px-5 py-2">{cvedata.cve.published}</td>
-            <td className="px-5 py-2">{cvedata.cve.lastModified}</td>
-            <td className="px-5 py-2">
-              <button className="text-sky-600 underline" onClick={
-                () => window.open(`/vulnerability/${cvedata.cve.id}`, '_blank')}>
+            <td className="px-5 py-3">{cvedata.cve.id}</td>
+            <td className="px-5 py-3">{cvedata.cve.descriptions[0].lang}</td>
+            <td className="px-5 py-3">{cvedata.cve.published}</td>
+            <td className="px-5 py-3">{cvedata.cve.lastModified}</td>
+            <td className="px-5 py-3">
+              <button className="text-sky-600 underline" 
+              onClick={() => window.open(`/vulnerability/${cvedata.cve.id}`, '_blank')}>
                 Click here
               </button>
             </td>
